@@ -17,3 +17,20 @@
   height: 2rem;
   fill: rgba(0, 0, 0, 0.523);
 }
+
+.title {
+  display: none;
+}
+
+@media screen and (width > 768px) {
+  .title {
+    display: block;
+    font-size: 2rem;
+  }
+}
+
+@media screen and (width > 1024px) {
+  .title {
+    font-size: 3rem;
+  }
+}

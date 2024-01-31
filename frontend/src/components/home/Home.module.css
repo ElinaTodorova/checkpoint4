@@ -1,0 +1,36 @@
+.section {
+  margin: 4rem 2rem 2rem 2rem;
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.paragraph {
+  text-align: center;
+}
+
+.image {
+  display: none;
+}
+
+@media screen and (width > 768px) {
+  .title {
+    display: none;
+  }
+
+  .image {
+    display: block;
+    width: 20rem;
+    height: 15rem;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+}

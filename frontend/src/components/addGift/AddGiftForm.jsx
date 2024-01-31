@@ -122,6 +122,11 @@ export default function AddGiftForm() {
           </Button>
         </Box>
       </div>
+      <img
+        className={style.flowersImg}
+        src="/images/flowers.png"
+        alt="Flowers deco"
+      />
     </section>
   );
 }

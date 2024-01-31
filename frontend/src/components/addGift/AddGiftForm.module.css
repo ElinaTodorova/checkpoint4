@@ -19,3 +19,17 @@
   font-size: 2rem;
   margin-top: 1rem;
 }
+
+.flowersImg {
+  display: none;
+}
+
+@media screen and (width > 768px) {
+  .flowersImg {
+    display: block;
+  }
+
+  .contaier {
+    width: 50%;
+  }
+}

@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
 import LogInPage from "./pages/LogInPage";
+import AddGift from "./pages/AddGift";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LogInPage />,
+  },
+  {
+    path: "/gifts/add",
+    element: <AddGift />,
   },
 ]);
 

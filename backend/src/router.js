@@ -26,6 +26,9 @@ router.post("/gifts", giftControllers.add);
 // Route to update
 router.put("/gifts/:id", giftControllers.edit);
 
+// Route to delete
+router.delete("/gifts/:id/delete", giftControllers.deleteG);
+
 /* ************************************************************************* */
 
 module.exports = router;

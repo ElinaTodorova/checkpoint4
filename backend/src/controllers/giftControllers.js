@@ -43,9 +43,19 @@ const edit = async (req, res, next) => {
     next(err);
   }
 };
+
+const deleteG = async (req, res, next) => {
+  try {
+    await tables.gift.deleteGift(req.params.id);
+    res.sendStatus(204);
+  } catch (err) {
+    next(err);
+  }
+};
 // Ready to export the controller functions
 module.exports = {
   browse,
   add,
   edit,
+  deleteG,
 };

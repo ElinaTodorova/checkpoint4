@@ -51,7 +51,7 @@ export default function AddGiftForm() {
 
       // Redirection vers la page de connexion si la création réussit
       if (response.status === 201) {
-        navigate("/");
+        navigate("/gifts");
       }
     } catch (err) {
       // Log des erreurs possibles

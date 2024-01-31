@@ -13,15 +13,17 @@ export default function CategoriesHome() {
           </div>
         </div>
       </Link>
-      <div className={style.category}>
-        <h2 className={style.title}>Our activities suggestions</h2>
-        <h2 className={style.titleDesktop}>
-          Discover our activities suggestions
-        </h2>
-        <div className={style.imageContainer}>
-          <img src="images/castle.jpg" alt="Castle icon" />
+      <Link to="/activities">
+        <div className={style.category}>
+          <h2 className={style.title}>Our activities suggestions</h2>
+          <h2 className={style.titleDesktop}>
+            Discover our activities suggestions
+          </h2>
+          <div className={style.imageContainer}>
+            <img src="images/castle.jpg" alt="Castle icon" />
+          </div>
         </div>
-      </div>
+      </Link>
     </section>
   );
 }

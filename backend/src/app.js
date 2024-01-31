@@ -1,6 +1,7 @@
 // Load the express module to create a web application
 
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
 
@@ -26,7 +27,7 @@ const app = express();
 // For example: ["http://mysite.com", "http://another-domain.com"]
 
 /*
-const cors = require("cors");
+
 
 app.use(
   cors({
@@ -38,6 +39,13 @@ app.use(
   })
 );
 */
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL, // keep this one, after checking the value in `backend/.env`
+    optionsSuccessStatus: 200,
+    credentials: true,
+  })
+);
 
 /* ************************************************************************* */
 
@@ -54,7 +62,7 @@ app.use(
 
 // Uncomment one or more of these options depending on the format of the data sent by your client:
 
-// app.use(express.json());
+app.use(express.json());
 // app.use(express.urlencoded());
 // app.use(express.text());
 // app.use(express.raw());

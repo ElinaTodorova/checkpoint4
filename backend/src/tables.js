@@ -3,10 +3,14 @@
 /* ************************************************************************* */
 
 // Import the manager modules responsible for handling data operations on the tables
+const ActivityManager = require("./models/ActivityManager");
+const GiftManager = require("./models/GiftManager");
 const ItemManager = require("./models/ItemManager");
 
 const managers = [
   ItemManager,
+  GiftManager,
+  ActivityManager,
   // Add other managers here
 ];
 

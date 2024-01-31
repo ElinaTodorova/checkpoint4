@@ -31,6 +31,7 @@ export default function Gifts() {
         {allGifts.length > 0 &&
           allGifts.map((gift) => (
             <GiftCard
+              id={gift.id}
               key={gift.id}
               name={gift.name_gift}
               descriprion={gift.description_gift}

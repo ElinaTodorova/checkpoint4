@@ -1,0 +1,19 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: rgb(252, 224, 235);
+}
+
+.homeIcon {
+  width: 2rem;
+  height: 2rem;
+  fill: rgba(0, 0, 0, 0.523);
+}
+
+.userIcon {
+  width: 2rem;
+  height: 2rem;
+  fill: rgba(0, 0, 0, 0.523);
+}

@@ -27,6 +27,15 @@ class GiftManager extends AbstractManager {
     // Return the ID of the newly inserted item
     return result.insertId;
   }
+
+  async update(id, gift) {
+    const [result] = await this.database.query(
+      `update ${this.table} set name_gift = ?, description_gift = ? , age_min = ?, image_url = ? where id = ?`,
+      [gift.name, gift.description, gift.ageMin, gift.imageUrl, id]
+    );
+
+    return result;
+  }
 }
 
 module.exports = GiftManager;

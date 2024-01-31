@@ -32,8 +32,20 @@ const add = async (req, res, next) => {
   }
 };
 
+const edit = async (req, res, next) => {
+  try {
+    const id = Number(req.params.id);
+    const gift = req.body;
+    await tables.gift.update(id, gift);
+
+    res.sendStatus(204);
+  } catch (err) {
+    next(err);
+  }
+};
 // Ready to export the controller functions
 module.exports = {
   browse,
   add,
+  edit,
 };

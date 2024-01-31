@@ -23,6 +23,9 @@ router.get("/items/:id", itemControllers.read);
 router.post("/items", itemControllers.add);
 router.post("/gifts", giftControllers.add);
 
+// Route to update
+router.put("/gifts/:id", giftControllers.edit);
+
 /* ************************************************************************* */
 
 module.exports = router;

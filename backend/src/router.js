@@ -10,6 +10,9 @@ const router = express.Router();
 const itemControllers = require("./controllers/itemControllers");
 const giftControllers = require("./controllers/giftControllers");
 const activityControllers = require("./controllers/activityControllers");
+const userMiddleware = require("./middlewares/userMiddleware");
+const userControllers = require("./controllers/userControllers");
+const { hashPassword } = require("./services/auth");
 
 // Route to get a list of items
 router.get("/items", itemControllers.browse);
@@ -22,6 +25,7 @@ router.get("/items/:id", itemControllers.read);
 // Route to add a new item
 router.post("/items", itemControllers.add);
 router.post("/gifts", giftControllers.add);
+router.post("/users", userMiddleware, hashPassword, userControllers.add);
 
 // Route to update
 router.put("/gifts/:id", giftControllers.edit);

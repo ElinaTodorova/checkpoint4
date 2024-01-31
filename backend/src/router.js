@@ -13,6 +13,7 @@ const activityControllers = require("./controllers/activityControllers");
 const userMiddleware = require("./middlewares/userMiddleware");
 const userControllers = require("./controllers/userControllers");
 const { hashPassword } = require("./services/auth");
+const authControllers = require("./controllers/authControllers");
 
 // Route to get a list of items
 router.get("/items", itemControllers.browse);
@@ -32,6 +33,12 @@ router.put("/gifts/:id", giftControllers.edit);
 
 // Route to delete
 router.delete("/gifts/:id/delete", giftControllers.deleteG);
+
+// Login
+router.post("/login", authControllers.login);
+
+// Logout
+router.get("/logout", authControllers.logout);
 
 /* ************************************************************************* */
 

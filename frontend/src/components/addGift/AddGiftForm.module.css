@@ -1,0 +1,21 @@
+.contaier {
+  width: 80%;
+  height: 35rem;
+  background-color: rgb(252, 224, 235);
+  padding: 2rem;
+  border-radius: 25px;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 6rem 1.5rem 1.5rem 1.5rem;
+}
+
+.title {
+  text-align: center;
+  font-style: italic;
+  font-size: 2rem;
+  margin-top: 1rem;
+}

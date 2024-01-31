@@ -36,6 +36,15 @@ class GiftManager extends AbstractManager {
 
     return result;
   }
+
+  async deleteGift(id) {
+    const [result] = await this.database.query(
+      `delete from ${this.table} where id = ?`,
+      [id]
+    );
+
+    return result.affectedRows;
+  }
 }
 
 module.exports = GiftManager;

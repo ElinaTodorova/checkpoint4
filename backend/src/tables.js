@@ -6,11 +6,13 @@
 const ActivityManager = require("./models/ActivityManager");
 const GiftManager = require("./models/GiftManager");
 const ItemManager = require("./models/ItemManager");
+const UserManager = require("./models/UserManager");
 
 const managers = [
   ItemManager,
   GiftManager,
   ActivityManager,
+  UserManager,
   // Add other managers here
 ];
 

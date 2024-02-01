@@ -19,3 +19,23 @@
   font-size: 2rem;
   margin-top: 1rem;
 }
+
+.flowers {
+  display: none;
+}
+
+@media screen and (width > 768px) {
+  .flowers {
+    display: block;
+  }
+
+  .contaier {
+    width: 50%;
+  }
+}
+
+@media screen and (width > 1024px) {
+  .container {
+    width: 40%;
+  }
+}

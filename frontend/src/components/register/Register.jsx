@@ -152,6 +152,7 @@ export default function Register() {
           </Button>
         </Box>
       </div>
+      <img className={style.flowers} src="/images/flowers.png" alt="Flowers" />
     </section>
   );
 }

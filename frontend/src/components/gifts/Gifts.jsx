@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
 import style from "./Gifts.module.css";
 import GiftCard from "./GiftCard";
 
@@ -40,6 +42,26 @@ export default function Gifts() {
               userId={gift.user_id}
             />
           ))}
+        <div className={style.containerPlus}>
+          <Link to="/gifts/add">
+            <img src="images/plus.png" alt="Plus for add" />
+          </Link>
+        </div>
+        <div className={style.containerPlus}>
+          <Link to="/gifts/add">
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "rgb(250, 209, 225)",
+                fontWeight: "bold",
+                width: "20rem",
+              }}
+              className={style.btn}
+            >
+              Add your suggestion
+            </Button>
+          </Link>
+        </div>
       </section>
     </>
   );

@@ -12,3 +12,37 @@
   text-align: center;
   margin-top: 2rem;
 }
+
+.containerPlus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+
+.containerPlus img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.containerPlus button {
+  display: none;
+}
+
+@media screen and (width > 768px) {
+  .containerPlus img {
+    display: none;
+  }
+
+  .containerPlus button {
+    display: block;
+  }
+
+  .containerPlus {
+    margin-top: 0.2rem;
+  }
+
+  .titleH2 {
+    display: none;
+  }
+}

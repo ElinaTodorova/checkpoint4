@@ -22,7 +22,7 @@ export default function Header() {
       <h1 className={style.title}>Little Princess</h1>
       {userData !== null && userData !== "null" ? (
         <div className={style.user}>
-          <p>{`Welcome, ${userData.user.email}`}</p>
+          <p>{`Welcome, ${userData.user.username}`}</p>
           <svg
             onClick={handleClickLogout}
             className={style.userIcon}

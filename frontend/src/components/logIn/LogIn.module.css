@@ -13,9 +13,30 @@
   margin: 6rem 1.5rem 1.5rem 1.5rem;
 }
 
+.signup a {
+  color: rgba(85, 81, 82, 0.968);
+  font-style: italic;
+}
+
 .title {
   text-align: center;
   font-style: italic;
   font-size: 2rem;
   margin-top: 1rem;
+}
+
+@media screen and (width > 768px) {
+  .flowers {
+    display: block;
+  }
+
+  .contaier {
+    width: 50%;
+  }
+}
+
+@media screen and (width > 1024px) {
+  .container {
+    width: 40%;
+  }
 }

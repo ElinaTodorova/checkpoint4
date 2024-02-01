@@ -36,3 +36,13 @@
 .svg:hover {
   cursor: pointer;
 }
+
+@media screen and (width > 768px) {
+  .giftCard {
+    align-items: flex-start;
+  }
+
+  .infos p {
+    font-size: 1rem;
+  }
+}

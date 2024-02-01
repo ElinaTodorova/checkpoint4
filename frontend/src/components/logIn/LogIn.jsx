@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -100,7 +100,11 @@ export default function LogIn() {
             Submit
           </Button>
         </Box>
+        <p className={style.signup}>
+          Don't have an account ? <Link to="/register">Sign up here</Link>
+        </p>
       </div>
+      <img className={style.flowers} src="/images/flowers.png" alt="Flowers" />
     </section>
   );
 }

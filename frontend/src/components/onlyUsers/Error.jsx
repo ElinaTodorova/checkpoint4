@@ -12,6 +12,7 @@ export default function Error() {
         <Link to="/login">log in to your account</Link> or
         <Link to="/register"> create a new account</Link> now.
       </p>
+      <img className={style.img} src="/images/error.jpg" alt="Error logo" />
     </section>
   );
 }

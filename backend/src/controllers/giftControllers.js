@@ -15,6 +15,22 @@ const browse = async (req, res, next) => {
   }
 };
 
+// The R of BREAD - Read operation
+const read = async (req, res, next) => {
+  try {
+    // Fetch a specific item from the database based on the provided ID
+    const gift = await tables.gift.read(req.params.id);
+
+    if (gift === null) {
+      res.sendStatus(404);
+    } else {
+      res.json(gift);
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
 // The A of BREAD - Add (Create) operation
 const add = async (req, res, next) => {
   // Extract the item data from the request body
@@ -32,11 +48,12 @@ const add = async (req, res, next) => {
   }
 };
 
+// The E of BREAD - Edit (Update) operation
 const edit = async (req, res, next) => {
   try {
     const id = Number(req.params.id);
-    const gift = req.body;
-    await tables.gift.update(id, gift);
+    const { newGift } = req.body;
+    await tables.gift.update(id, newGift);
 
     res.sendStatus(204);
   } catch (err) {
@@ -44,6 +61,7 @@ const edit = async (req, res, next) => {
   }
 };
 
+// The D of BREAD - Destroy (Delete) operation
 const deleteG = async (req, res, next) => {
   try {
     await tables.gift.deleteGift(req.params.id);
@@ -52,10 +70,11 @@ const deleteG = async (req, res, next) => {
     next(err);
   }
 };
-// Ready to export the controller functions
+
 module.exports = {
   browse,
   add,
   edit,
+  read,
   deleteG,
 };

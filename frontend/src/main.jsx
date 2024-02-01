@@ -8,6 +8,7 @@ import LogInPage from "./pages/LogInPage";
 import AddGift from "./pages/AddGift";
 import GiftsPage from "./pages/GiftsPage";
 import ActivitiesPage from "./pages/ActivitiesPage";
+import EditPage from "./pages/EditPage";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/activities",
     element: <ActivitiesPage />,
+  },
+  {
+    path: "/gifts/:id/edit",
+    element: <EditPage />,
   },
 ]);
 

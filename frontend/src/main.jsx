@@ -9,6 +9,7 @@ import AddGift from "./pages/AddGift";
 import GiftsPage from "./pages/GiftsPage";
 import ActivitiesPage from "./pages/ActivitiesPage";
 import EditPage from "./pages/EditPage";
+import RegisterPage from "./pages/RegisterPage";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "/gifts/:id/edit",
     element: <EditPage />,
+  },
+  {
+    path: "/register",
+    element: <RegisterPage />,
   },
 ]);
 

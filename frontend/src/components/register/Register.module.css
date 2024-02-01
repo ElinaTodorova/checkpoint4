@@ -1,9 +1,9 @@
 .contaier {
   width: 80%;
-  height: 24rem;
+  height: 35rem;
   background-color: rgb(252, 224, 235);
   padding: 2rem;
-  border-radius: 25px;
+  border-radius: 35px;
 }
 
 .section {

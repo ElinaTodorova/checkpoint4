@@ -37,6 +37,7 @@ export default function Gifts() {
               descriprion={gift.description_gift}
               ageMin={gift.age_min}
               image={gift.image_url}
+              userId={gift.user_id}
             />
           ))}
       </section>

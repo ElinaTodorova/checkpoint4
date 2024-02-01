@@ -4,12 +4,14 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import style from "./AddGiftForm.module.css";
+import { useUserContext } from "../../contexts/userContext";
 
 export default function AddGiftForm() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [ageMin, setAgeMin] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  const { userData } = useUserContext();
 
   const navigate = useNavigate();
 
@@ -45,6 +47,7 @@ export default function AddGiftForm() {
             description,
             ageMin,
             imageUrl,
+            userId: userData.user.id,
           }),
         }
       );

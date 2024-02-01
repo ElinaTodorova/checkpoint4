@@ -1,0 +1,21 @@
+.err {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.err h2 {
+  font-size: 3rem;
+  margin: 3rem;
+}
+
+.err p {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.err p > a {
+  color: rgb(255, 121, 143);
+}

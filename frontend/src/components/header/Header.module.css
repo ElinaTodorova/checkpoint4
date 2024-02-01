@@ -22,10 +22,29 @@
   display: none;
 }
 
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user p {
+  display: none;
+}
+
+.nav svg:hover {
+  cursor: pointer;
+}
+
 @media screen and (width > 768px) {
   .title {
     display: block;
     font-size: 2rem;
+  }
+
+  .user p {
+    display: block;
   }
 }
 

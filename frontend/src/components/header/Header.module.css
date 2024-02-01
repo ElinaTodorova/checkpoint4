@@ -46,6 +46,10 @@
   .user p {
     display: block;
   }
+
+  .nav {
+    padding: 0 1.5rem 0 1.5rem;
+  }
 }
 
 @media screen and (width > 1024px) {

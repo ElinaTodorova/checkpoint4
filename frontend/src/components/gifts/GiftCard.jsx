@@ -70,5 +70,9 @@ GiftCard.propTypes = {
   ageMin: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
-  userId: PropTypes.number.isRequired,
+  userId: PropTypes.number,
+};
+
+GiftCard.defaultProps = {
+  userId: 0,
 };

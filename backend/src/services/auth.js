@@ -27,6 +27,25 @@ const hashPassword = async (req, res, next) => {
   }
 };
 
+const jwt = require("jsonwebtoken");
+
+const verifyToken = (req, res, next) => {
+  try {
+    const token = req.cookies.access_token;
+
+    if (!token) {
+      return res.sendStatus(403);
+    }
+    req.auth = jwt.verify(token, process.env.APP_SECRET);
+    return next();
+  } catch (err) {
+    return res.sendStatus(401).send("il y eu une erreur");
+  }
+};
+
+module.exports = verifyToken;
+
 module.exports = {
   hashPassword,
+  verifyToken,
 };

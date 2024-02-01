@@ -27,8 +27,12 @@ export default function Edit() {
   return (
     <>
       {isUpdated === true && (
-        <Alert variant="filled" severity="success">
-          This is a filled success Alert.
+        <Alert
+          variant="filled"
+          severity="success"
+          sx={{ backgroundColor: "pink" }}
+        >
+          Your suggestion was update with success.
         </Alert>
       )}
       <section className={style.section}>

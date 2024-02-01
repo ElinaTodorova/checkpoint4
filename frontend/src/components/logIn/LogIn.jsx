@@ -4,11 +4,13 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import style from "./LogIn.module.css";
+import { useUserContext } from "../../contexts/userContext";
 
 export default function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const { login } = useUserContext();
   const navigate = useNavigate();
 
   const handleChangeEmail = (e) => {
@@ -39,7 +41,8 @@ export default function LogIn() {
 
       // Redirection vers la page de connexion si la création réussit
       if (response.status === 200) {
-        // const user = await response.json();
+        const user = await response.json();
+        login(user);
         navigate("/");
       } else {
         // Log des détails de la réponse en cas d'échec

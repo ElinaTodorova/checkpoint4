@@ -31,8 +31,8 @@ class GiftManager extends AbstractManager {
   async create(gift) {
     // Execute the SQL INSERT query to add a new item to the "item" table
     const [result] = await this.database.query(
-      `insert into ${this.table} (name_gift, description_gift, age_min, image_url) values (?, ?, ? , ?)`,
-      [gift.name, gift.description, gift.ageMin, gift.imageUrl]
+      `insert into ${this.table} (name_gift, description_gift, age_min, image_url, user_id) values (?, ?, ? , ?, ?)`,
+      [gift.name, gift.description, gift.ageMin, gift.imageUrl, gift.userId]
     );
 
     // Return the ID of the newly inserted item

@@ -10,6 +10,7 @@ import GiftsPage from "./pages/GiftsPage";
 import ActivitiesPage from "./pages/ActivitiesPage";
 import EditPage from "./pages/EditPage";
 import RegisterPage from "./pages/RegisterPage";
+import { UserContextProvider } from "./contexts/userContext";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <UserContextProvider>
+      <RouterProvider router={router} />
+    </UserContextProvider>
   </React.StrictMode>
 );

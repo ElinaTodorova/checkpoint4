@@ -22,6 +22,7 @@ router.get("/activities", activityControllers.browse);
 
 // Route to get a specific item by ID
 router.get("/items/:id", itemControllers.read);
+router.get("/gifts/:id", giftControllers.read);
 
 // Route to add a new item
 router.post("/items", itemControllers.add);
@@ -29,7 +30,7 @@ router.post("/gifts", giftControllers.add);
 router.post("/users", userMiddleware, hashPassword, userControllers.add);
 
 // Route to update
-router.put("/gifts/:id", giftControllers.edit);
+router.put("/gifts/:id/edit", giftControllers.edit);
 
 // Route to delete
 router.delete("/gifts/:id/delete", giftControllers.deleteG);

@@ -15,6 +15,17 @@ class GiftManager extends AbstractManager {
     return rows;
   }
 
+  async read(id) {
+    // Execute the SQL SELECT query to retrieve a specific item by its ID
+    const [rows] = await this.database.query(
+      `select * from ${this.table} where id = ?`,
+      [id]
+    );
+
+    // Return the first row of the result, which represents the item
+    return rows[0];
+  }
+
   // The C of CRUD - Create operation
 
   async create(gift) {
@@ -30,8 +41,8 @@ class GiftManager extends AbstractManager {
 
   async update(id, gift) {
     const [result] = await this.database.query(
-      `update ${this.table} set name_gift = ?, description_gift = ? , age_min = ?, image_url = ? where id = ?`,
-      [gift.name, gift.description, gift.ageMin, gift.imageUrl, id]
+      `update ${this.table} set name_gift = ?, description_gift = ? , age_min = ? where id = ?`,
+      [gift.name, gift.description, gift.ageMin, Number(id)]
     );
 
     return result;

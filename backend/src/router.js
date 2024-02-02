@@ -26,6 +26,8 @@ router.post("/users", userMiddleware, hashPassword, userControllers.add);
 
 // Login
 router.post("/login", authControllers.login);
+// Logout
+router.get("/logout", authControllers.logout);
 
 router.use(verifyToken);
 // Route to add a new gift
@@ -34,8 +36,6 @@ router.post("/gifts", giftControllers.add);
 router.put("/gifts/:id/edit", giftControllers.edit);
 // Route to delete
 router.delete("/gifts/:id/delete", giftControllers.deleteG);
-// Logout
-router.get("/logout", authControllers.logout);
 
 /* ************************************************************************* */
 

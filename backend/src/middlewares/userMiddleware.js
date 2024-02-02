@@ -6,6 +6,8 @@ const userMiddleware = async (req, res, next) => {
   const emailRegex = /[a-z0-9._]+@[a-z0-9-]+.[a-z]{2,3}/;
 
   const existingUser = await tables.user.readUserByEmail(email);
+  const passRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
   if (existingUser !== undefined) {
     errors.push({ message: "This email has already been used." });
@@ -33,10 +35,11 @@ const userMiddleware = async (req, res, next) => {
 
   if (password === undefined) {
     errors.push({ field: "password", message: "This field is required!" });
-  } else if (password.length < 8) {
+  } else if (!passRegex.test(password)) {
     errors.push({
       field: "password",
-      message: "Le nombre minimum de caractères est de 8.",
+      message:
+        "At least 8 characters, 1 number, 1 special character, 1 uppercase letter.",
     });
   }
 

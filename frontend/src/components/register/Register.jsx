@@ -16,6 +16,8 @@ export default function Register() {
   const [errorPass, setErrorPass] = useState([]);
   const navigate = useNavigate();
   const emailRegex = /[a-z0-9._]+@[a-z0-9-]+.[a-z]{2,3}/;
+  const passRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
   const handleChangeEmail = (e) => {
     setEmail(e.target.value);
@@ -49,8 +51,10 @@ export default function Register() {
       if (!emailRegex.test(email)) {
         setErrorEmail("Email is not valid!");
       }
-      if (password.length < 8) {
-        setErrorPass("Password must contains at least 8 characters!");
+      if (!passRegex.test(password)) {
+        setErrorPass(
+          "At least 8 characters, 1 number, 1 special character, 1 uppercase letter."
+        );
       }
       // Appel à l'API pour créer un nouvel utilisateur
       const response = await fetch(

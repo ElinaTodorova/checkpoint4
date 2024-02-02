@@ -3,6 +3,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function EditForm({ gift, setIsUpdated }) {
   const [newGift, setNewGift] = useState({
@@ -10,6 +11,8 @@ export default function EditForm({ gift, setIsUpdated }) {
     description: gift?.description_gift,
     ageMin: gift?.age_min,
   });
+
+  const navigate = useNavigate();
 
   const handleChangeName = (e) => {
     setNewGift({ ...newGift, name: e.target.value });
@@ -40,6 +43,7 @@ export default function EditForm({ gift, setIsUpdated }) {
       );
       if (response.status === 204) {
         setIsUpdated(true);
+        navigate("/gifts");
       }
     } catch (err) {
       console.error(err);

@@ -25,6 +25,10 @@
   margin-top: 1rem;
 }
 
+.flowers {
+  display: none;
+}
+
 @media screen and (width > 768px) {
   .flowers {
     display: block;
@@ -33,10 +37,17 @@
   .contaier {
     width: 50%;
   }
+
+  .flowers {
+    display: block;
+  }
 }
 
 @media screen and (width > 1024px) {
   .container {
     width: 40%;
+  }
+  .flowers {
+    display: block;
   }
 }
